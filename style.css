@@ -308,6 +308,10 @@ section{
 
 .about-main-img {
     width: 100%;
+    height: auto;
+    max-width: 100%;
+    aspect-ratio: auto;
+    object-fit: contain;
     display: block;
     margin: 0 auto 40px;
 }
@@ -347,7 +351,7 @@ section{
 }
 
 .parallax-shop {
-    background-image: url("image/shop.png");
+    background-image: url("image/shop.jpg");
     background-attachment: fixed;
     background-position: center 10%;
     background-repeat: no-repeat;
@@ -402,6 +406,10 @@ section{
 
 .map-img {
     width: 100%;
+    height: auto;
+    max-width: 100%;
+    aspect-ratio: auto;
+    object-fit: contain;
     display: block;
     margin: 0 auto;
 }
@@ -420,4 +428,122 @@ section{
     font-family: "Shippori Mincho", serif;
     font-size: 14px;
     color: #000;
+}
+
+@media (max-width: 600px) {
+    .logo {
+        font-size: 48px;
+        padding: 24px 12px 12px;
+    }
+
+    .hero-tools,
+    .hero-tools.is-stuck {
+        width: 100%;
+        gap: 10px;
+        padding: 8px 12px;
+        flex-wrap: wrap;
+    }
+
+    .hero-tools.is-stuck .nav ul,
+    .nav ul {
+        gap: 8px 12px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .nav a {
+        font-size: 14px;
+    }
+
+    .mail-btn {
+        padding: 8px 14px;
+        font-size: 14px;
+    }
+
+    .insta-icon {
+        width: 32px;
+    }
+
+    .cake-slideshow {
+        height: 360px;
+    }
+
+    .news {
+        padding: 32px 12px;
+    }
+
+    .news-box {
+        width: 100%;
+        padding: 24px 16px;
+    }
+
+    .about {
+        padding: 24px 12px;
+    }
+
+    .about-box {
+        grid-template-columns: 1fr;
+        gap: 24px;
+        padding: 24px 16px;
+    }
+
+    .about-title {
+        font-size: 22px;
+        margin-bottom: 24px;
+    }
+
+    .about-text {
+        font-size: 16px;
+        line-height: 2;
+    }
+
+    .about-main-img {
+        margin-bottom: 24px;
+    }
+
+    .about-photos {
+        margin-top: 24px;
+        gap: 10px;
+    }
+
+    .about-photo {
+        height: 180px;
+        -webkit-mask-image: none;
+        mask-image: none;
+    }
+
+    .parallax-shop {
+        height: 360px;
+        background-attachment: scroll;
+        background-position: center;
+    }
+
+    .access {
+        flex-direction: column;
+    }
+
+    .access-label,
+    .access-info {
+        width: 100%;
+    }
+
+    .access-label {
+        padding: 24px 20px;
+    }
+
+    .access-info,
+    .access-map .access-info {
+        padding: 24px 20px;
+    }
+
+    .access-row {
+        flex-direction: column;
+        gap: 6px;
+        margin-bottom: 24px;
+    }
+
+    .access-key,
+    .access-value {
+        width: 100%;
+    }
 }

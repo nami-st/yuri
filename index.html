@@ -6,9 +6,9 @@
     <title>Patisserie Yuri</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Corinthia:wght@700&display=swap" rel="stylesheet">
+    <link rel="preload" as="image" href="image/topcake.jpg" fetchpriority="high">
+    <link href="https://fonts.googleapis.com/css2?family=Corinthia:wght@700&family=Shippori+Mincho:wght@400;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Shippori+Mincho:wght@400;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
    <header class="header" id="top">
@@ -34,10 +34,10 @@
             <a href="mail.html" class="mail-btn">✉ Mail →</a>
          </div>
          <section class="cake-slideshow" aria-label="ケーキの紹介">
-            <img src="image/topcake.png" alt="ケーキ3点" class="cake-slide">
-            <img src="image/showcase1.png" alt="ショーケースのケーキ" class="cake-slide">
-            <img src="image/whole.png" alt="ホールケーキ" class="cake-slide">
-            <img src="image/yakigasi.png" alt="焼き菓子" class="cake-slide">
+            <img src="image/topcake.jpg" alt="ケーキ3点" class="cake-slide" fetchpriority="high" decoding="async" width="1600" height="538">
+            <img src="image/showcase1.jpg" alt="ショーケースのケーキ" class="cake-slide" decoding="async" width="1600" height="1478">
+            <img src="image/whole.jpg" alt="ホールケーキ" class="cake-slide" decoding="async" width="1600" height="968">
+            <img src="image/yakigasi.jpg" alt="焼き菓子" class="cake-slide" decoding="async" width="1536" height="1024">
          </section>
     </div>
    </header>
@@ -47,19 +47,19 @@
 
         <div class="news-item">
          <p class="news-date">2026.06.01</p>
-         <a href="image/coupon.png" class="news-text news-link">【Instagramフォロワー様限定】お会計から10％OFFクーポン配信中
+         <a href="image/coupon.jpg" class="news-text news-link">【Instagramフォロワー様限定】お会計から10％OFFクーポン配信中
          </a>
         </div>
 
         <div class="news-item">
          <p class="news-date">2026.06.01</p>
-         <a href="image/peachtart.png" class="news-text news-link">【新作】山梨県産の桃あかつきを使用した『季節のフルーツタルト』が新登場
+         <a href="image/peachtart.jpg" class="news-text news-link">【新作】山梨県産の桃あかつきを使用した『季節のフルーツタルト』が新登場
          </a>
          </div>
 
         <div class="news-item">
          <p class="news-date">2026.05.15</p>
-         <a href="image/calender.png" class="news-text news-link">【営業日のご案内】６月の営業日のお知らせ   
+         <a href="image/calender.jpg" class="news-text news-link">【営業日のご案内】６月の営業日のお知らせ   
          </a>  
       </div>
       </div>
@@ -70,7 +70,7 @@
         <div class="about-left">
           <h2 class="about-title">ひとくちごとに、きらめく幸せを...</h2>
 
-          <img src="image/showcase1.png" alt="ショーケース" class="about-main-img">
+          <img src="image/showcase1.jpg" alt="ショーケース" class="about-main-img" loading="lazy" decoding="async" width="1600" height="1478">
 
           <p class="about-text">
            小さな幸せを届けたい。<br>
@@ -93,8 +93,8 @@
           </p>
 
           <div class="about-photos">
-             <img src="image/whole.png" alt="ホールケーキ" class="about-photo">
-             <img src="image/yakigasi.png" alt="焼き菓子" class="about-photo">
+             <img src="image/whole.jpg" alt="ホールケーキ" class="about-photo" loading="lazy" decoding="async" width="1600" height="968">
+             <img src="image/yakigasi.jpg" alt="焼き菓子" class="about-photo" loading="lazy" decoding="async" width="1536" height="1024">
           </div>
         </div>
       </div>
@@ -152,7 +152,7 @@
          <h2>Map</h2>
       </div>
       <div class="access-info">
-         <img src="image/accessmap.png" alt="アクセスマップ" class="map-img">
+         <img src="image/accessmap.jpg" alt="アクセスマップ" class="map-img" loading="lazy" decoding="async" width="1376" height="768">
       </div>
    </section>
 
@@ -168,7 +168,15 @@
          heroTools.classList.toggle('is-stuck', window.scrollY >= toolsTop);
       };
 
-      window.addEventListener('scroll', updateTools);
+      let scrollFrame = false;
+      window.addEventListener('scroll', () => {
+         if (scrollFrame) return;
+         scrollFrame = true;
+         window.requestAnimationFrame(() => {
+            updateTools();
+            scrollFrame = false;
+         });
+      }, { passive: true });
       updateTools();
    </script>
    
