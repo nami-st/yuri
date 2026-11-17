@@ -1,0 +1,384 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Helvetica Neue", Arial, sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+.header{
+    display: flex;
+    align-items: stretch;
+}
+
+.nav ul{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 28px;
+    list-style: none;
+}
+
+.nav{
+    position: relative;
+    z-index: 10;
+}
+
+.hero-tools.is-stuck{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 16px 24px;
+    background-color: #CBAE89;
+    z-index: 1000;
+}
+
+.hero-tools.is-stuck .nav ul{
+    flex-direction: row;
+    justify-content: center;
+    gap: 32px;
+}
+
+.nav a{
+    display: block;
+    text-decoration: none;
+    color: #B08D57;
+    font-size: 20px;
+    font-family: "Source Sans 3", sans-serif;
+    cursor: pointer;
+}
+
+section{
+    scroll-margin-top: 68px;
+}
+
+.hero-left{
+    width: 100%;
+    background-color: #CBAE89;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hero-tools{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    padding: 0 24px 24px;
+}
+
+
+.logo{
+    text-align: center;
+    color: #B08D57;
+    font-size: 80px;
+    font-family:'Corinthia', cursive;
+    padding-top: 40px;
+}
+
+.insta-icon{
+    width: 40px;
+    display: block;
+}
+
+.mail-btn{
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 24px;
+    border: 1px solid #B08D57;
+    color: #B08D57;
+    text-decoration: none;
+    border-radius: 20px;
+    font-size: 20px;
+    white-space: nowrap;
+}
+
+.cake-slideshow{
+    position: relative;
+    width: 100%;
+    height: 560px;
+    overflow: hidden;
+    background-color: #f0e5d9;
+}
+
+.cake-slide{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    filter: blur(2px);
+    -webkit-mask-image: radial-gradient(ellipse at center, black 34%, rgba(0, 0, 0, 0.72) 58%, transparent 100%);
+    mask-image: radial-gradient(ellipse at center, black 34%, rgba(0, 0, 0, 0.72) 58%, transparent 100%);
+    animation: cake-fade 16s infinite;
+}
+
+.cake-slide:nth-child(1){
+    animation-delay: 0s;
+}
+
+.cake-slide:nth-child(2){
+    animation-delay: 4s;
+}
+
+.cake-slide:nth-child(3){
+    animation-delay: 8s;
+}
+
+.cake-slide:nth-child(4){
+    animation-delay: 12s;
+}
+
+@keyframes cake-fade{
+    0%, 25%{
+        opacity: 1;
+    }
+    30%, 100%{
+        opacity: 0;
+    }
+}
+
+.news {
+    background-color: #F0E5D9;
+    padding: 60px 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.news-box {
+    background-color: #FFF;
+    padding: 40px 60px;
+    border-radius: 4px;
+}
+
+.news-title {
+    text-align: center;
+    margin-bottom: 32px;
+    font-family: "Shippori Mincho", serif;
+    font-weight: 700;
+}
+
+.news-date,
+.news-text {
+    font-family: "Shippori Mincho", serif;
+}
+
+.news-link {
+    text-decoration: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+.news-link:hover {
+    text-decoration: underline;
+}
+
+.contact-page {
+    min-height: 100vh;
+    padding: 60px 24px;
+    background-color: #F0E5D9;
+}
+
+.contact-box {
+    width: 100%;
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 40px;
+    background-color: #FFF;
+}
+
+.contact-title {
+    margin-bottom: 32px;
+    color: #915412;
+    text-align: center;
+    font-family: "Shippori Mincho", serif;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form label {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: #915412;
+    font-family: "Shippori Mincho", serif;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #c7b39a;
+    font: inherit;
+}
+
+.contact-form textarea {
+    min-height: 180px;
+    resize: vertical;
+}
+
+.contact-submit {
+    padding: 12px 24px;
+    border: 1px solid #915412;
+    background-color: #abded0;
+    color: #915412;
+    font: inherit;
+    cursor: pointer;
+}
+
+.contact-back {
+    display: block;
+    margin-top: 24px;
+    color: #915412;
+    text-align: center;
+}
+
+@media (max-width: 600px) {
+    .contact-box {
+        padding: 28px 20px;
+    }
+}
+
+.about {
+    background-color: #c7b39a;
+    padding: 38px 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.about-box {
+    background-color: #f0e5d9;
+    padding: 38px 40px;
+    width: 100%;
+    max-width: 1400px;
+}
+
+.about-title {
+    text-align: center;
+    font-size: 40px;
+    margin-bottom: 40px;
+}
+
+.about-main-img {
+    width: 60%;
+    display: block;
+    margin: 0 auto 40px;
+}
+
+.about-text {
+    text-align: center;
+    line-height: 2;
+    font-size: 18px;
+}
+
+.about-title,
+.about-text {
+    font-family: "Shippori Mincho", serif;
+    color: #915412
+}
+
+.about-photos {
+    display: flex;
+    gap: 24px;
+    margin: 40px 0;
+}
+
+.about-photo {
+    width: 50%;
+    height: 400px;
+    object-fit: cover;
+    display: block;
+    -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 100%);
+     mask-image: radial-gradient(ellipse at center, black 40%, transparent 100%);
+}
+
+.parallax-shop {
+    background-image: url("image/shop.png");
+    background-attachment: fixed;
+    background-position: center 10%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 600px;
+}
+
+.access {
+    display: flex;
+    align-items: stretch;
+    background-color: #F0E5D9;
+}
+
+.access-label {
+    width: 25%;
+    background-color: #c7b39a;
+    padding: 60px 40px;
+    box-sizing: border-box;
+}
+
+.access-label h2 {
+    color: #D27C20;
+    font-size: 24px;
+    font-family: "Source Sans 3", serif;
+}
+ .access-info {
+    width: 75%;
+    padding: 60px 40px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+}
+
+.access-row {
+    display: flex;
+    margin-bottom: 32px;
+}
+
+.access-key {
+    width: 30%;
+    font-family: "Shippori Mincho", serif;
+    color: #000;
+}
+
+.access-value {
+    width: 70%;
+    font-family: "Shippori Mincho", serif;
+    color: #000;
+    line-height: 1.8;
+}
+
+
+.map-img {
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+
+.access-map .access-info {
+    padding: 60px 40px 0;
+}
+  
+.footer {
+    background-color: #F0E5D9;
+    padding: 24px;
+    text-align: center;
+}
+
+.footer-text {
+    font-family: "Shippori Mincho", serif;
+    font-size: 14px;
+    color: #000;
+}
