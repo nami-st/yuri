@@ -251,12 +251,31 @@ section{
     .contact-box {
         padding: 28px 20px;
     }
+
+    .about {
+        padding: 24px 20px;
+    }
+
+    .about-box {
+        padding: 28px 20px;
+    }
+
+    .about-photos {
+        width: 100%;
+        gap: 12px;
+    }
+
+    .about-photo {
+        height: 200px;
+    }
 }
 
 .about {
     background-color: #c7b39a;
     padding: 38px 40px;
     display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
 }
 
