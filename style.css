@@ -294,6 +294,12 @@ section{
     min-width: 0;
 }
 
+.about-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
 .about-title {
     text-align: center;
     font-size: 30px;
@@ -308,7 +314,7 @@ section{
 
 .about-text {
     text-align: center;
-    line-height: 2;
+    line-height: 1.8;
     font-size: 18px;
 }
 
