@@ -117,7 +117,6 @@ section{
     height: 100%;
     object-fit: cover;
     opacity: 0;
-    filter: blur(2px);
     -webkit-mask-image: radial-gradient(ellipse at center, black 34%, rgba(0, 0, 0, 0.72) 58%, transparent 100%);
     mask-image: radial-gradient(ellipse at center, black 34%, rgba(0, 0, 0, 0.72) 58%, transparent 100%);
     animation: cake-fade 16s infinite;
