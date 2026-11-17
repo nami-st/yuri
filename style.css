@@ -294,7 +294,9 @@ section{
 .about-photos {
     display: flex;
     gap: 24px;
-    margin: 40px 0;
+    width: 50%;
+    max-width: 700px;
+    margin: 40px 0 0 auto;
 }
 
 .about-photo {
