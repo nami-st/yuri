@@ -465,7 +465,13 @@ section{
     }
 
     .cake-slideshow {
-        height: 360px;
+        height: auto;
+        aspect-ratio: 16 / 9;
+    }
+
+    .cake-slide {
+        object-fit: contain;
+        background-color: #f0e5d9;
     }
 
     .news {
@@ -513,9 +519,11 @@ section{
     }
 
     .parallax-shop {
-        height: 360px;
+        height: auto;
+        aspect-ratio: 1551 / 1014;
         background-attachment: scroll;
         background-position: center;
+        background-size: contain;
     }
 
     .access {
