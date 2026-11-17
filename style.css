@@ -284,16 +284,24 @@ section{
     padding: 38px 40px;
     width: 100%;
     max-width: 1400px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.about-left,
+.about-right {
+    min-width: 0;
 }
 
 .about-title {
     text-align: center;
-    font-size: 40px;
+    font-size: 30px;
     margin-bottom: 40px;
 }
 
 .about-main-img {
-    width: 60%;
+    width: 100%;
     display: block;
     margin: 0 auto 40px;
 }
@@ -313,9 +321,8 @@ section{
 .about-photos {
     display: flex;
     gap: 24px;
-    width: 50%;
-    max-width: 700px;
-    margin: 40px 0 0 auto;
+    width: 100%;
+    margin: 40px 0 0;
 }
 
 .about-photo {
@@ -325,6 +332,12 @@ section{
     display: block;
     -webkit-mask-image: radial-gradient(ellipse at center, black 40%, transparent 100%);
      mask-image: radial-gradient(ellipse at center, black 40%, transparent 100%);
+}
+
+@media (max-width: 600px) {
+    .about-box {
+        grid-template-columns: 1fr;
+    }
 }
 
 .parallax-shop {
